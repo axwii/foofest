@@ -5,7 +5,7 @@ import Accordion from "./components/Accordion";
 
 export default function Home() {
   return (
-    <div>     
+    <div>
       <Hero />
       <div className="flex space-x-40 justify-center mt-12">
        <Button text="Program" />
