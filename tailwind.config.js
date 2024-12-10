@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'Gambetta': ['Gambetta-Regular'],
+        GermaniaOneRegular: ['GermaniaOne-Regular'],
+      },
       colors: {
         
         background: "var(--background)",
