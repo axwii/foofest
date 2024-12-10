@@ -6,7 +6,11 @@ export default function Home() {
   return (
     <div>     
       <Hero />
+      <div className="flex space-between">
        <Button text="Program" />
+       <Button text="Billetter" />
+       <Button text="Frivillig" />
+       </div>
     </div>
   );
 }
