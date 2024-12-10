@@ -4,11 +4,13 @@ const headersList = {
   Accept: "application/json",
   "Content-Type": "application/json",
   prefer: "return=representation",
-  // apikey: key,
 };
 
 export async function getBands() {
-  const response = await fetch(`${url}/bands`);
+  const response = await fetch(`${url}/bands`, {
+    method: "GET",
+    headers: headersList,
+  });
 
   const data = await response.json();
   return data;
@@ -16,6 +18,16 @@ export async function getBands() {
 
 export async function getSingleBands(slug) {
   const response = await fetch(`${url}/bands/${slug}`, {
+    method: "GET",
+    headers: headersList,
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+export async function getSchedule() {
+  const response = await fetch(`${url}/schedule`, {
     method: "GET",
     headers: headersList,
   });
