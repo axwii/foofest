@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const ArtistCard = ({ band, schedule }) => {
@@ -10,6 +12,7 @@ const ArtistCard = ({ band, schedule }) => {
       <Link href={`/lineup/${slug}`} className="flex flex-col items-center justify-center text-center w-full h-full">
         <img 
           src={logo} 
+          onError={(e) => { e.target.onerror = null; e.target.src = `/images/logos/${logo}`; }}
           alt={`${name} logo`} 
           className="absolute inset-0 object-cover w-full h-full"
         />
