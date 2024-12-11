@@ -6,7 +6,7 @@ export default async function Home() {
 //   console.log(bands);
 
   return (
-    <div>
+    <div className="bg-black">
       <BandList bands={bands} />
     </div>
   );
