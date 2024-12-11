@@ -15,6 +15,13 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         gold: "#BB8C00",
+        heading: "#FFFFE3",
+      },
+      height: {
+        90: "360px",
+      },
+      width: {
+        81: "324px",
       },
     },
   },

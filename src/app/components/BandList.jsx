@@ -5,11 +5,11 @@ const BandList = ({ bands }) => {
   }
 
   return (
-    <ul className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3   ">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-y-14">
       {bands.map((band) => (
-        <BandCard band={band} key={band.slug} />
+        <BandCard  band={band} key={band.slug} />
       ))}
-    </ul>
+    </div>
   );
 };
 
