@@ -25,14 +25,14 @@ const Accordion = () => {
         <div key={index} className="border-b border-gray-300 py-4">
           <div
             onClick={() => toggleAccordion(index)}
-            className={`text-2xl cursor-pointer transition-colors font-Gambetta ${
+            className={`text-2xl cursor-pointer transition-colors font-Gambetta ml-8 ${
               activeIndex === index
             }`}
           >
             ➤ {question}
           </div>
           {activeIndex === index && (
-            <div className="my-8 text-gray-700">
+            <div className="my-8 ml-16 max-w-80">
               <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of</p>
             </div>
           )}
