@@ -22,7 +22,7 @@ const ArtistCard = ({ band, schedule }) => {
     <div 
       ref={ref}
       key={band.slug} 
-      className={`relative flex flex-col items-center font-GermaniaOneRegular justify-center bg-black w-81 h-90 m-auto text-white border border-gray-700 overflow-hidden transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+      className={`relative flex flex-col items-center font-GermaniaOneRegular justify-center bg-black w-81 h-90 m-auto text-white  overflow-hidden transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}
     >
       {loaded && (
         <Link href={`/lineup/${slug}`} className="flex flex-col items-center justify-center text-center w-full h-full">
