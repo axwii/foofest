@@ -5,11 +5,11 @@ const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const questions = [
-    "Hvordan bliver jeg Frivillig?",
-    "Hvem spiller på Foo Fest?",
-    "Er der rent drikkevand på festivalen?",
-    "Skal jeg booke campingplads?",
-    "Hvor mange billetter er der til Foo Fest?",
+    "How to become a sponsor of Foo Fest?",
+    "Who plays at Foo Fest?",
+    "Is the drinking water clean at Foo Fest?",
+    "Do i have to book a camping spot?",
+    "How many tickets is there for sale?",
   ];
 
   const toggleAccordion = (index) => {
@@ -18,7 +18,7 @@ const Accordion = () => {
 
   return (
     <div className="mt-52">
-        <h1 className="text-5xl font-GermaniaOneRegular text-center mb-6 uppercase">Ofte stillede spørgsmål</h1>
+        <h1 className="text-5xl font-GermaniaOneRegular text-center mb-6 uppercase">Frequently asked questions</h1>
     <div className="p-6 max-w-lg mx-auto font-sans">
       
       {questions.map((question, index) => (

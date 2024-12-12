@@ -9,8 +9,8 @@ export default function Home() {
       <Hero />
       <div className="flex space-x-40 justify-center mt-12">
         <Button text="Program" link="lineup"/>
-        <Button text="Billetter" link="ticket"/>
-        <Button text="Frivillig" link="volunteer"/>
+        <Button text="Tickets" link="ticket"/>
+        <Button text="Volunteer" link="volunteer"/>
       </div>
       <h2 className="text-center text-8xl mt-12 font-Gambetta font-thin">
         Line-up
