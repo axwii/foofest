@@ -29,7 +29,7 @@ const HeroSingle = ({ band = {} }) => {
       <img
         src={`/images/logos/${logo}`}
         alt={name}
-        className="absolute bottom-[-15px] lg:right-[100px] md:right-[75px] right-[10px] max-h-[150px] max-w-[150px]"
+        className="absolute bottom-[-5px] lg:right-[100px] md:right-[75px] right-[10px] max-h-[150px] max-w-[150px]"
         style={{ zIndex: 1,borderRadius: "100%" }}
 
       />

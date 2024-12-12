@@ -5,13 +5,18 @@ const BandSingleView = ({ band }) => {
   return (
     <div>
       <HeroSingle  band={band} />
-      <h1>{name}</h1> 
-      <p>{genre}</p>
-      <p>{bio}</p>
+      <div className="grid grid-cols-2 grid-rows-2 pt-12 lg:mx-40 mx-5">
+      <div className="mt-5">
+        <h2 className="text-3xl font-GermaniaOneRegular">Members</h2>
       {members.map((member, index) => (
-        <p key={index}>{member}</p>
+        <p className="font-Gambetta" key={index}>{member}</p>
       ))}
-      <p>{logoCredits}</p>
+      </div>
+      <div className="row-span-2">
+      <h2 className="text-3xl text-center font-GermaniaOneRegular">About</h2>
+      <p className="max-w-[442px] m-auto font-Gambetta">{bio}</p>
+      </div>
+      </div>
     </div>
   );
 };
