@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const ArtistCard = () => {
   return (
-    <div className="navbar bg-transparent sticky top-0">
+    <div className="navbar bg-transparent sticky top-0 z-20">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
