@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ArtistCard = () => {
   return (
     <div className="navbar bg-base-100">
@@ -24,19 +26,21 @@ const ArtistCard = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Homepage</a>
+              <Link href="/">Homepage</Link>
             </li>
             <li>
-              <a>Portfolio</a>
+              <Link href="/lineup">Lineup</Link>
             </li>
             <li>
-              <a>About</a>
+              <Link href="/ticket">Tickets</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link href="/" className="btn btn-ghost text-xl">
+          daisyUI
+        </Link>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">
