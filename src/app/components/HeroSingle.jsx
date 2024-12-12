@@ -1,13 +1,14 @@
-const HeroSingle = () => {
+const HeroSingle = ({ band = {} }) => {
+  const { name, logo } = band;
   return (
-    <div className="hero min-h-screen flex items-center justify-center relative">
+    <div className="hero min-h-72 flex items-center justify-center relative">
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/images/forsideimg.jpg')",
+          backgroundImage: `url('/images/logos/${logo}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(3px)",
+          filter: "blur(5px)",
           zIndex: -1,
         }}
       ></div>
@@ -16,15 +17,22 @@ const HeroSingle = () => {
         style={{ zIndex: 0 }}
       ></div>
       <div
-        className="hero-content text-neutral-content text-center relative"
+        className="hero-content text-neutral-content text-left absolute bottom-[-35px] lg:left-12 left-0"
         style={{ zIndex: 1 }}
       >
         <div className="">
-          <h1 className="mb-5 text-7xl md:text-8xl lg:text-9xl font-GermaniaOneRegular">
-            Foo Fest
+          <h1 className="mb-5 text-6xl md:text-7xl lg:text-8xl font-GermaniaOneRegular">
+            {name}
           </h1>
         </div>
       </div>
+      <img
+        src={`/images/logos/${logo}`}
+        alt={name}
+        className="absolute bottom-[-15px] lg:right-[100px] md:right-[75px] right-[10px] max-h-[150px] max-w-[150px]"
+        style={{ zIndex: 1,borderRadius: "100%" }}
+
+      />
     </div>
   );
 };
