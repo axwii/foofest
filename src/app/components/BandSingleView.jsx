@@ -5,7 +5,7 @@ const BandSingleView = ({ band }) => {
   return (
     <div>
       <HeroSingle  band={band} />
-      <div className="grid grid-cols-2 grid-rows-2 pt-12 lg:mx-40 mx-5">
+      <div className="grid grid-cols-2 grid-rows-2 py-12 lg:mx-40 mx-5">
       <div className="mt-5">
         <h2 className="text-3xl font-GermaniaOneRegular">Members</h2>
       {members.map((member, index) => (
