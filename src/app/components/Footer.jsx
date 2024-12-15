@@ -1,11 +1,23 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
-<footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+<footer className="footer footer-center bg-base-200 text-base-content border-t p-10 mt-12">
   <nav className="grid grid-flow-col gap-4">
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <ul className="flex flex-row gap-4">
+  <li>
+                <Link href="/">Homepage</Link>
+              </li>
+              <li>
+                <Link href="/lineup">Lineup</Link>
+              </li>
+              <li>
+                <Link href="/ticket">Tickets</Link>
+              </li>
+              <li>
+                <Link href="/">Volunteer</Link>
+              </li>
+              </ul>
   </nav>
   <nav>
     <div className="grid grid-flow-col gap-4">
@@ -45,7 +57,7 @@ const Footer = () => {
     </div>
   </nav>
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - Foo Fest</p>
   </aside>
 </footer>
   );
