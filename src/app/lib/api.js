@@ -4,6 +4,7 @@ const headersList = {
   Accept: "application/json",
   "Content-Type": "application/json",
   prefer: "return=representation",
+  userAgent: "Thunder Client (https://www.thunderclient.com)",
 };
 
 export async function getBands() {
@@ -36,6 +37,37 @@ export async function getSchedule() {
   return data;
 }
 
+export async function getAvailableSpots() {
+  const response = await fetch(`${url}/available-spots`, {
+    method: "GET",
+    headers: {},
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+export async function PutReserveSpot(area, amount) {
+  const response = await fetch(`${url}/reserve-spot`, {
+    method: "PUT",
+    headers: headersList,
+    body: JSON.stringify({ area, amount }),
+  });
+
+  const data = await response.json();
+  return data;
+}
+
+export async function PostFulfillReservation(reservationId) {
+  const response = await fetch(`${url}/fullfill-reservation`, {
+    method: "POST",
+    headers: headersList,
+    body: JSON.stringify({ id: reservationId }),
+  });
+
+  const data = await response.json();
+  return data;
+}
 export async function getMatchedBandsAndSchedule() {
   // Fetch begge datasets parallelt
   const results = await Promise.allSettled([getBands(), getSchedule()]);
