@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useStep } from "./useStep";
 import TicketSelection from "../components/TicketSelection";
 import CampingOptions from "../components/CampingOptions";
 import PersonalInfo from "../components/PersonalInfo";
@@ -8,14 +8,14 @@ import PaymentForm from "../components/PaymentForm";
 import CheckoutSummary from "../components/CheckoutSummary";
 
 export default function HomePage() {
-  const [currentStep, setCurrentStep] = useState(0);
+    const { currentStep, nextStep, prevStep } = useStep();
 
-  const steps = [
-    <TicketSelection/>,
-    <CampingOptions/>,
-    <PersonalInfo/>,
-    <PaymentForm/>,
-    <CheckoutSummary/>,
+    const steps = [
+        <TicketSelection/>,
+        <CampingOptions/>,
+        <PersonalInfo/>,
+        <PaymentForm/>,
+        <CheckoutSummary/>,
   ];
 
   return (
@@ -24,12 +24,12 @@ export default function HomePage() {
       <div>{steps[currentStep]}</div>
       <div className="navigation-buttons">
         {currentStep > 0 && (
-          <button onClick={() => setCurrentStep((prev) => prev - 1)}>
+          <button onClick={prevStep}>
             Back
           </button>
         )}
         {currentStep < steps.length - 1 && (
-          <button onClick={() => setCurrentStep((prev) => prev + 1)}>
+          <button onClick={nextStep}>
             Next
           </button>
         )}
