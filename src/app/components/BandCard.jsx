@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 
@@ -26,9 +27,10 @@ const ArtistCard = ({ band, schedule }) => {
     >
       {loaded && (
         <Link href={`/lineup/${slug}`} className="flex flex-col items-center justify-center text-center w-full h-full">
-          <img 
-            src={logo} 
-            onError={(e) => { e.target.onerror = null; e.target.src = `/images/logos/${logo}`; }}
+          <Image 
+            src={logo.includes('http') ? logo : `/images/logos/${logo}`} 
+            width={350}
+            height={350}
             alt={`${name} logo`} 
             className="absolute inset-0 object-cover w-full h-full"
           />
