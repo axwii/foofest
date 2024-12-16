@@ -4,6 +4,7 @@ const headersList = {
   Accept: "application/json",
   "Content-Type": "application/json",
   prefer: "return=representation",
+  userAgent: "Thunder Client (https://www.thunderclient.com)",
 };
 
 export async function getBands() {
@@ -39,7 +40,7 @@ export async function getSchedule() {
 export async function getAvailableSpots() {
   const response = await fetch(`${url}/available-spots`, {
     method: "GET",
-    headers: headersList,
+    headers: {},
   });
 
   const data = await response.json();
