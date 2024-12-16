@@ -4,14 +4,19 @@ import { useState } from "react";
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export default function TicketSelection() {
+export default function TicketSelection({ updateTicketData }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  const onSubmit = (data) => {
+    updateTicketData(data);
+    console.log("data from component", data);
+  };
+
+  console.log("error?", errors);
 
   return (
     <div>
@@ -29,8 +34,7 @@ export default function TicketSelection() {
           {...register("VIP", { min: 0 })}
           className="input input-bordered"
         />
-
-        <input type="submit" className="btn"/>
+        <input type="submit" className="btn" />
       </form>
     </div>
   );
