@@ -19,7 +19,7 @@ export default function HomePage() {
   const steps = [
     <TicketSelection updateTicketData={handleUpdateTicketData} />,
     <CampingOptions updateTicketData={handleUpdateTicketData} ticketData={ticketData} />,
-    <PersonalInfo />,
+    <PersonalInfo updateTicketData={handleUpdateTicketData} ticketData={ticketData} />,
     <PaymentForm />,
     <CheckoutSummary />,
   ];
