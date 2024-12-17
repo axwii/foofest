@@ -46,7 +46,7 @@ export default function TicketSelection({ updateTicketData }) {
   return (
     <div className="bg-black min-h-screen text-white py-8">
       <h1 className="text-center text-5xl font-bold text-yellow-100 mb-12">
-        Billetter
+        Tickets
       </h1>
       <div className="max-w-6xl space-y-12">
         {tickets.map((ticket, index) => (

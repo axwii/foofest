@@ -27,7 +27,7 @@ export default function HomePage() {
 
   return (
     <div className="booking-container">
-      <h1 className="text-2xl font-bold">Book Your Festival Tickets</h1>
+      {/* <h1 className="text-2xl font-bold">Book Your Festival Tickets</h1> */}
       <div>{steps[currentStep]}</div>
       <div className="navigation-buttons">
         {currentStep > 0 && <button onClick={prevStep}>Back</button>}
