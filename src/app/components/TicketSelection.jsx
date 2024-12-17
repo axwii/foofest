@@ -1,6 +1,23 @@
-import React from "react";
+"use client";
 
-const Ticketselection = () => {
+import { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
+
+export default function TicketSelection({ updateTicketData }) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    updateTicketData(data);
+    console.log("data from component", data);
+  };
+
+  console.log("error?", errors);
+
   const tickets = [
     {
       title: "Foo Fest Billet",
@@ -29,14 +46,14 @@ const Ticketselection = () => {
       <h1 className="text-center text-5xl font-bold text-yellow-100 mb-12">
         Billetter
       </h1>
-      <div className="max-w-6xl  space-y-12">
+      <div className="max-w-6xl space-y-12">
         {tickets.map((ticket, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row overflow-hidden  lg:h-96 lg:relative border-y lg:border-none"
+            className="flex flex-col md:flex-row overflow-hidden lg:h-96 lg:relative border-y lg:border-none"
           >
             {/* Image */}
-            <div className=" md:w-1/3 m-5 lg:ml-20 ">
+            <div className="md:w-1/3 m-5 lg:ml-20">
               <img
                 src={ticket.image}
                 alt={ticket.title}
@@ -46,9 +63,13 @@ const Ticketselection = () => {
 
             {/* Ticket Details */}
             <div className="w-full md:w-2/3 p-6 m-auto lg:h-96 lg:border-y">
-              <h2 className="text-4xl mt-3 text-heading font-bold font-GermaniaOneRegular">{ticket.title}</h2>
-              <p className="text-heading mt-2 font-GermaniaOneRegular text-3xl">{ticket.price}</p>
-              <ul className="mt-10 space-y-2 text-gray-300 ">
+              <h2 className="text-4xl mt-3 text-heading font-bold font-GermaniaOneRegular">
+                {ticket.title}
+              </h2>
+              <p className="text-heading mt-2 font-GermaniaOneRegular text-3xl">
+                {ticket.price}
+              </p>
+              <ul className="mt-10 space-y-2 text-gray-300">
                 {ticket.description.map((desc, i) => (
                   <li key={i} className="list-disc list-inside">
                     {desc}
@@ -72,8 +93,25 @@ const Ticketselection = () => {
           </div>
         ))}
       </div>
+
+      <div>
+        <h2>Select Your Tickets</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="number"
+            placeholder="Regular"
+            {...register("Regular", { min: 0 })}
+            className="input input-bordered"
+          />
+          <input
+            type="number"
+            placeholder="VIP"
+            {...register("VIP", { min: 0 })}
+            className="input input-bordered"
+          />
+          <input type="submit" className="btn" />
+        </form>
+      </div>
     </div>
   );
-};
-
-export default Ticketselection;
+}
