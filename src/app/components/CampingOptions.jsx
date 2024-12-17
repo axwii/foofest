@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { getAvailableSpots } from "@/app/lib/api";
+import { getAvailableSpots, PutReserveSpot } from "@/app/lib/api";
 
-export default function CampingOptions() {
+export default function CampingOptions({ updateTicketData, ticketData }) {
   const [spots, setSpots] = useState([]);
-  const [selectedSpot, setSelectedSpot] = useState(null);
+  const [area, setArea] = useState(null);
   const { register, handleSubmit } = useForm();
   const onSubmit = data => console.log(data);
 
@@ -14,10 +14,23 @@ export default function CampingOptions() {
     getAvailableSpots().then(setSpots);
   }, []);
 
-  const handleReserve = (event) => {
-    event.preventDefault();
-    // Your reservation logic here
-    console.log('Reservation made');
+  const handleReserve = async () => {
+    const amount = parseInt(ticketData.Regular || 0) + parseInt(ticketData.VIP || 0);
+    console.log("amount and area", area, amount);
+    
+    const reservation = await PutReserveSpot({ area, amount });
+    console.log("ticketData fpr the api", { area, amount });
+    console.log("Reservation log", reservation);
+    
+    // try {
+    //   const reservation = await PutReserveSpot(area, amount);
+    //   updateTicketData({ camping: { area: area, amount: amount} });
+    //   console.log("Reservation log", reservation);
+    //   console.log("info",{ camping: { area: area, amount: amount} });
+    // } catch (error) {
+    //   console.error(error.message);
+    //   console.log("error form handleReserve", error.message);
+    // }
   };
 
   return (
@@ -32,13 +45,13 @@ export default function CampingOptions() {
                 type="radio"
                 value={spot.area}
                 disabled={spot.available === 0}
-                onChange={() => setSelectedSpot(spot.area)}
+                onChange={() => setArea(spot.area)}
               />
               {spot.area} ({spot.available} spots available)
             </label>
           </div>
         ))}
-        <button onClick={handleReserve} disabled={!selectedSpot} className="btn">
+        <button onClick={handleReserve} disabled={!area} className="btn">
           Reserve Spot
         </button>
       </form>

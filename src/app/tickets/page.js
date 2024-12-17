@@ -18,11 +18,12 @@ export default function HomePage() {
 
   const steps = [
     <TicketSelection updateTicketData={handleUpdateTicketData} />,
-    <CampingOptions />,
+    <CampingOptions updateTicketData={handleUpdateTicketData} ticketData={ticketData} />,
     <PersonalInfo />,
     <PaymentForm />,
     <CheckoutSummary />,
   ];
+  console.log("ticketData in the page.js", ticketData);
 
   return (
     <div className="booking-container">
