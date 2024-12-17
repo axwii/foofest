@@ -1,14 +1,79 @@
-"use client";
+import React from "react";
 
-import { useState } from "react";
+const Ticketselection = () => {
+  const tickets = [
+    {
+      title: "Foo Fest Billet",
+      price: "Fra 799 DKK",
+      description: [
+        "Neque porro quisquam est qui dolorem ipsum",
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
+        "Neque porro quisquam est",
+      ],
+      image: "/images/foobillet.jpg",
+    },
+    {
+      title: "VIP Billet",
+      price: "Fra 1299 DKK",
+      description: [
+        "Neque porro quisquam est qui dolorem ipsum",
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
+        "Neque porro quisquam est",
+      ],
+      image: "/images/VIPbillet.jpg",
+    },
+  ];
 
-export default function TicketSelection( ) {
+  return (
+    <div className="bg-black min-h-screen text-white py-8">
+      <h1 className="text-center text-5xl font-bold text-yellow-100 mb-12">
+        Billetter
+      </h1>
+      <div className="max-w-6xl  space-y-12">
+        {tickets.map((ticket, index) => (
+          <div
+            key={index}
+            className="flex flex-col md:flex-row overflow-hidden  lg:h-96 lg:relative border-y lg:border-none"
+          >
+            {/* Image */}
+            <div className=" md:w-1/3 m-5 lg:ml-20 ">
+              <img
+                src={ticket.image}
+                alt={ticket.title}
+                className="w-full lg:w-72 h-48 md:h-full object-cover rounded-3xl"
+              />
+            </div>
 
-  
-    return (
-      <div>
-        <h2>Select Your Tickets</h2>
+            {/* Ticket Details */}
+            <div className="w-full md:w-2/3 p-6 m-auto lg:h-96 lg:border-y">
+              <h2 className="text-4xl mt-3 text-heading font-bold font-GermaniaOneRegular">{ticket.title}</h2>
+              <p className="text-heading mt-2 font-GermaniaOneRegular text-3xl">{ticket.price}</p>
+              <ul className="mt-10 space-y-2 text-gray-300 ">
+                {ticket.description.map((desc, i) => (
+                  <li key={i} className="list-disc list-inside">
+                    {desc}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Counter */}
+              <div className="mt-6 flex items-center space-x-4 lg:absolute top-4 right-4">
+                <button className="bg-black border text-white p-1 px-2 rounded-full">
+                  -
+                </button>
+                <span className="text-black bg-[#D9D9D9] px-4 py-1 rounded">
+                  0
+                </span>
+                <button className="bg-white text-black p-1 px-2 rounded-full">
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    );
-  }
-  
+    </div>
+  );
+};
+
+export default Ticketselection;
