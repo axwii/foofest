@@ -11,7 +11,7 @@ const ArtistCard = () => {
         </Link>
       </div>
       <div className="navbar-end">
-        <Link href="/ticket">
+        <Link href="/tickets">
           <button className="btn btn-ghost"><img className="max-w-[30px] max-h-[30px] mr-2" src="/images/ticket.svg" alt="" /></button>
         </Link>
       </div>
