@@ -47,10 +47,12 @@ export async function getAvailableSpots() {
   return data;
 }
 
-export async function PutReserveSpot(area, amount) {
+export async function PutReserveSpot({ area, amount }) {
   const response = await fetch(`${url}/reserve-spot`, {
     method: "PUT",
-    headers: headersList,
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({ area, amount }),
   });
 
