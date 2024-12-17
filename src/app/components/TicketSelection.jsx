@@ -28,6 +28,7 @@ export default function TicketSelection({ updateTicketData }) {
         "Neque porro quisquam est",
       ],
       image: "/images/foobillet.jpg",
+      type: "Regular",
     },
     {
       title: "VIP Billet",
@@ -38,6 +39,7 @@ export default function TicketSelection({ updateTicketData }) {
         "Neque porro quisquam est",
       ],
       image: "/images/VIPbillet.jpg",
+      type: "VIP", 
     },
   ];
 
@@ -83,7 +85,7 @@ export default function TicketSelection({ updateTicketData }) {
           <input
             type="number"
             placeholder="0"
-            {...register("VIP", { min: 0 })}
+            {...register(ticket.type, { min: 0 })}
             className="input input-bordered"
           />
           
