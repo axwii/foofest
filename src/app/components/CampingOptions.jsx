@@ -16,22 +16,13 @@ export default function CampingOptions({ updateTicketData, ticketData }) {
 
   const handleReserve = async () => {
     const amount = parseInt(ticketData.Regular || 0) + parseInt(ticketData.VIP || 0);
-    console.log("amount and area", area, amount);
-    
     const reservation = await PutReserveSpot({ area, amount });
     console.log("ticketData fpr the api", { area, amount });
     console.log("Reservation log", reservation);
-    
-    // try {
-    //   const reservation = await PutReserveSpot(area, amount);
-    //   updateTicketData({ camping: { area: area, amount: amount} });
-    //   console.log("Reservation log", reservation);
-    //   console.log("info",{ camping: { area: area, amount: amount} });
-    // } catch (error) {
-    //   console.error(error.message);
-    //   console.log("error form handleReserve", error.message);
-    // }
+    console.log("reservation:", reservation.message);
+    updateTicketData({ area: area, amount: amount, reservationId: reservation.id, regular: ticketData.Regular, vip: ticketData.VIP });
   };
+
 
   return (
     <div>
