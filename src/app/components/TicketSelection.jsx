@@ -79,37 +79,24 @@ export default function TicketSelection({ updateTicketData }) {
 
               {/* Counter */}
               <div className="mt-6 flex items-center space-x-4 lg:absolute top-4 right-4">
-                <button className="bg-black border text-white p-1 px-2 rounded-full">
-                  -
-                </button>
-                <span className="text-black bg-[#D9D9D9] px-4 py-1 rounded">
-                  0
-                </span>
-                <button className="bg-white text-black p-1 px-2 rounded-full">
-                  +
-                </button>
+              <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="number"
+            placeholder="0"
+            {...register("VIP", { min: 0 })}
+            className="input input-bordered"
+          />
+          
+        </form>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div>
-        <h2>Select Your Tickets</h2>
+      <div className="flex justify-center my-10">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="number"
-            placeholder="Regular"
-            {...register("Regular", { min: 0 })}
-            className="input input-bordered"
-          />
-          <input
-            type="number"
-            placeholder="VIP"
-            {...register("VIP", { min: 0 })}
-            className="input input-bordered"
-          />
-          <input type="submit" className="btn" />
+        <input type="submit" className="btn  rounded-full border-black text-black hover:text-white py-2 px-6 w-44 flex items-center gap-4 justify-center bg-gold" />
         </form>
       </div>
     </div>
