@@ -8,21 +8,31 @@ export default function CampingOptions({ updateTicketData, ticketData }) {
   const [spots, setSpots] = useState([]);
   const [area, setArea] = useState(null);
   const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
 
+  // henter data, når komponenten aktiveres
   useEffect(() => {
     getAvailableSpots().then(setSpots);
   }, []);
 
+  // ikke nødvendig. Blot placeholder til at vise at dataen er tilgængelig
+  const onSubmit = data => console.log(data);
+
   const handleReserve = async () => {
     const amount = parseInt(ticketData.Regular || 0) + parseInt(ticketData.VIP || 0);
     const reservation = await PutReserveSpot({ area, amount });
-    console.log("ticketData fpr the api", { area, amount });
+    updateTicketData({ 
+      area: area, 
+      amount: amount, 
+      reservationId: reservation.id, 
+      regular: ticketData.Regular, 
+      vip: ticketData.VIP 
+    });
+
+    // testing data in console 
+    console.log("ticketData for the API", { area, amount });
     console.log("Reservation log", reservation);
     console.log("reservation:", reservation.message);
-    updateTicketData({ area: area, amount: amount, reservationId: reservation.id, regular: ticketData.Regular, vip: ticketData.VIP });
   };
-
 
   return (
     <div>
