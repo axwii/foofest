@@ -1,7 +1,7 @@
 const HeroSingle = ({ band = {} }) => {
   const { name, logo } = band;
   return (
-    <div className="hero min-h-52 flex items-center justify-center relative">
+    <div className="hero min-h-60 flex items-center justify-center relative mt-[-85px]">
       <div
         className="absolute inset-0"
         style={{
