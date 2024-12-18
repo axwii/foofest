@@ -49,7 +49,7 @@ const PaymentForm = () => {
           onFocus={handleInputFocus}
           className="input input-bordered w-full max-w-xs"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn">Submit</button>
       </form>
     </div>
   );
