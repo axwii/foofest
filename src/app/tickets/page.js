@@ -12,8 +12,11 @@ export default function HomePage() {
   const { currentStep, nextStep, prevStep } = useStep();
   const [ticketData, setTicketData] = useState({ regular: 0, vip: 0 });
 
-  const handleUpdateTicketData = (data) => {
-    setTicketData(data);
+  const handleUpdateTicketData = (newData) => {
+    setTicketData((prevData) => ({
+      ...prevData,
+      ...newData,
+    }));
   };
 
   const steps = [
