@@ -7,6 +7,8 @@ import CampingOptions from "../components/CampingOptions";
 import PersonalInfo from "../components/PersonalInfo";
 import PaymentForm from "../components/PaymentForm";
 import CheckoutSummary from "../components/CheckoutSummary";
+import CartLG from "../components/CartLG";
+import CartSM from "../components/CartSM"; 
 
 export default function HomePage() {
   const { currentStep, nextStep, prevStep } = useStep();
@@ -38,11 +40,8 @@ export default function HomePage() {
           <button onClick={nextStep}>Next</button>
         )}
       </div>
-      <div className="lg:w-[250px] lg:h-[300px] bg-[#242424] p-4 rounded-lg shadow-lg fixed right-5 top-1/2 transform -translate-y-1/2">
-  <h1>Cart</h1>
-  <p>Regular Tickets: {ticketData.regular}</p>
-  <p>VIP Tickets: {ticketData.vip}</p>
-</div>
+      <CartSM ticketData={ticketData} />
+<CartLG ticketData={ticketData} />
     </div>
   );
 }
