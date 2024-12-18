@@ -40,6 +40,7 @@ const PaymentForm = () => {
           value={state.number}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
+          className="input input-bordered w-full max-w-xs"
         />
         <input
           type="text"
@@ -48,6 +49,7 @@ const PaymentForm = () => {
           value={state.name}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
+          className="input input-bordered w-full max-w-xs"
         />
         <input
           type="text"
@@ -56,6 +58,7 @@ const PaymentForm = () => {
           value={state.expiry}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
+          className="input input-bordered w-full max-w-xs"
         />
         <input
           type="number"
@@ -64,6 +67,7 @@ const PaymentForm = () => {
           value={state.cvc}
           onChange={handleInputChange}
           onFocus={handleInputFocus}
+          className="input input-bordered w-full max-w-xs"
         />
       </form>
     </div>
