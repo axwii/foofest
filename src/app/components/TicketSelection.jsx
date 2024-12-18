@@ -24,7 +24,7 @@ export default function TicketSelection({ updateTicketData }) {
       price: "Fra 799 DKK",
       description: [
         "Neque porro quisquam est qui dolorem ipsum",
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
         "Neque porro quisquam est",
       ],
       image: "/images/foobillet.jpg",
@@ -35,7 +35,7 @@ export default function TicketSelection({ updateTicketData }) {
       price: "Fra 1299 DKK",
       description: [
         "Neque porro quisquam est qui dolorem ipsum",
-        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur",
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
         "Neque porro quisquam est",
       ],
       image: "/images/VIPbillet.jpg",
@@ -48,7 +48,7 @@ export default function TicketSelection({ updateTicketData }) {
       <h1 className="text-center text-5xl font-bold text-yellow-100 mb-12">
         Tickets
       </h1>
-      <div className="max-w-6xl space-y-12">
+      <div className="lg:w-3/4 space-y-12 ">
         {tickets.map((ticket, index) => (
           <div
             key={index}
