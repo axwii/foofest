@@ -12,12 +12,16 @@ import CartSM from "../components/CartSM";
 
 export default function HomePage() {
   const { currentStep, nextStep, prevStep } = useStep();
-  const [ticketData, setTicketData] = useState({ regular: 0, vip: 0 });
+  const [ticketData, setTicketData] = useState({ regular: 0, vip: 0, personalInfo: { regular: [], vip: [] } });
 
   const handleUpdateTicketData = (newData) => {
     setTicketData((prevData) => ({
       ...prevData,
       ...newData,
+      personalInfo: {
+        ...prevData.personalInfo,
+        ...newData.personalInfo,
+      },
     }));
   };
 
@@ -41,7 +45,7 @@ export default function HomePage() {
         )}
       </div>
       <CartSM ticketData={ticketData} />
-<CartLG ticketData={ticketData} />
+      <CartLG ticketData={ticketData} />
     </div>
   );
 }
