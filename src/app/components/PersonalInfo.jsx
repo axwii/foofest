@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import TicketForm from "./PersonalInfoForm";
 
-export default function TicketSelection({ updateTicketData, ticketData }) {
+export default function PersonalInfo({ updateTicketData, ticketData }) {
   const formDataRef = useRef({ regular: [], vip: [] });
 
   const handleFormChange = (index, data, type) => {
@@ -11,7 +11,7 @@ export default function TicketSelection({ updateTicketData, ticketData }) {
   };
 
   const handleSubmit = () => {
-    updateTicketData(formDataRef.current);
+    updateTicketData({ personalInfo: formDataRef.current });
   };
 
   const renderTicketForms = (ticketCount, type) => {
