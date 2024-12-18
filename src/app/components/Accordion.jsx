@@ -17,7 +17,7 @@ const Accordion = () => {
   };
 
   return (
-    <div className="mt-52">
+    <div className="mt-36">
         <h1 className="text-5xl font-GermaniaOneRegular text-center mb-6 uppercase">Frequently asked questions</h1>
     <div className="p-6 max-w-lg mx-auto font-sans">
       

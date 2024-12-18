@@ -10,7 +10,7 @@ const Lineup = ({ bands }) => {
   }
 
   return (
-    <div className="mt-10">
+    <div className="mt-14">
           <div className="text-center m-auto gap-x-2 justify-center flex flex-wrap max-w-[1250px] font-Gambetta">
       {bands.slice(0, 6).map((band, index) => (
         <Link 
