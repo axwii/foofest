@@ -35,7 +35,9 @@ export default function PersonalInfo({ updateTicketData, ticketData }) {
       </div>
       {renderTicketForms(ticketData.regular, "Regular")}
       {renderTicketForms(ticketData.vip, "VIP")}
-      <button className="mt-10" onClick={handleSubmit}>Submit</button>
+      <div className="flex justify-center mt-4 lg:ml-[-300px]">
+          <button type="submit" className="btn  rounded-full border-black text-black hover:text-white py-2 px-6 w-44 flex items-center gap-4 justify-center bg-gold mt-4" onClick={handleSubmit}> Submit</button>
+        </div>
     </div>
   );
 }
