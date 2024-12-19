@@ -30,7 +30,7 @@ export default function HomePage() {
     <CampingOptions updateTicketData={handleUpdateTicketData} ticketData={ticketData} />,
     <PersonalInfo updateTicketData={handleUpdateTicketData} ticketData={ticketData} />,
     <PaymentForm />,
-    <CheckoutSummary />,
+    <CheckoutSummary ticketData={ticketData}/>,
   ];
   console.log("ticketData in the page.js", ticketData);
 
