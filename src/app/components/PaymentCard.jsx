@@ -16,7 +16,7 @@ const PaymentForm = () => {
 
   return (
     <div>
-      <form className="flex flex-col gap-4 font-Gambetta" onSubmit={handleSubmit(onSubmit)}>
+      <form className="flex flex-col gap-4 font-Gambetta text-black" onSubmit={handleSubmit(onSubmit)}>
         <div className="m-auto w-[600px]">
           <label className="block text-sm mb-1" htmlFor="mobileNumber">Card Number</label>
         <input
