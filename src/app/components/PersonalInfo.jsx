@@ -28,11 +28,14 @@ export default function PersonalInfo({ updateTicketData, ticketData }) {
   };
 
   return (
-    <div>
-      <h2>Personal info</h2>
+    <div className="ml-8">
+      <div className="ml-10">
+      <h2 className="text-8xl font-GermaniaOneRegular text-heading">Personal info</h2>
+      <h4 className="text-xl font-Gambetta font-thin italic" >Fill out you information here</h4>
+      </div>
       {renderTicketForms(ticketData.regular, "Regular")}
       {renderTicketForms(ticketData.vip, "VIP")}
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="mt-10" onClick={handleSubmit}>Submit</button>
     </div>
   );
 }

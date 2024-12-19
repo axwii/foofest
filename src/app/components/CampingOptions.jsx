@@ -36,11 +36,11 @@ export default function CampingOptions({ updateTicketData, ticketData }) {
   };
 
   return (
-    <div className="min-h-screen ml-20 bg-black text-white flex flex-col py-12">
-      <h1 className="text-6xl font-bold text-yellow-100 mb-6 font-GermaniaOneRegular">
+    <div className="min-h-screen ml-20 bg-black text-white flex flex-col pb-12">
+      <h1 className="text-8xl font-bold text-heading mb-6 font-GermaniaOneRegular">
         Camping
       </h1>
-      <p className="text-lg mb-8 text-gray-300">CAMPING RESERVATION 99 DKK</p>
+      <p className="mb-8 text-xl font-Gambetta font-thin italic">CAMPING RESERVATION 99 DKK</p>
       <form
         className="grid md:grid-cols-2 gap-y-7 md:w-[520px]"
         onSubmit={handleSubmit(onSubmit)}

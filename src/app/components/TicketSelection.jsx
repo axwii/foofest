@@ -44,8 +44,8 @@ export default function TicketSelection({ updateTicketData }) {
   ];
 
   return (
-    <div className="bg-black min-h-screen text-white py-8">
-      <h1 className="text-center text-5xl font-bold text-yellow-100 mb-12">
+    <div className="bg-black min-h-screen text-white pb-8">
+      <h1 className="text-center text-8xl font-bold text-heading mb-12">
         Tickets
       </h1>
       <div className="lg:w-3/4 space-y-12 ">
