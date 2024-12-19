@@ -3,18 +3,18 @@
 import { useState, useEffect } from "react";
 import { PostFulfillReservation } from "@/app/lib/api";
 
-export default function TicketSelection({ ticketData }) {
+export default function CheckoutSummary({ ticketData }) {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     PostFulfillReservation(ticketData.reservationId)
-      .then(response => setMessage(response.message))
-      .catch(error => console.error("Error fulfilling reservation:", error));
+      .then((response) => setMessage(response.message))
+      .catch((error) => console.error("Error fulfilling reservation:", error));
   }, []);
 
-  console.log("ticketData in TicketSelection", ticketData);
+  console.log("ticketData in CheckoutSummary", ticketData);
   console.log("ticketData.reservationId", ticketData.reservationId);
-  console.log("message in TicketSelection", message);
+  console.log("message in CheckoutSummary", message);
   return (
     <div>
       <h2>Checkout Summary</h2>
