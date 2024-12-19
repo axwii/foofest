@@ -1,5 +1,5 @@
 "use client";
-
+import DatabaseUpdate from "./DatabaseUpdate";
 import { useState, useEffect } from "react";
 import { PostFulfillReservation } from "@/app/lib/api";
 
@@ -19,6 +19,7 @@ export default function CheckoutSummary({ ticketData }) {
     <div>
       <h2>Checkout Summary</h2>
       {message && <p>{message}</p>}
+      <DatabaseUpdate ticketData={ticketData} />
     </div>
   );
 }
