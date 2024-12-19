@@ -12,7 +12,7 @@ const Footer = () => {
                 <Link href="/lineup">Lineup</Link>
               </li>
               <li>
-                <Link href="/ticket">Tickets</Link>
+                <Link href="/tickets">Tickets</Link>
               </li>
               <li>
                 <Link href="/">Volunteer</Link>
