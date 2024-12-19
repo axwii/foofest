@@ -63,7 +63,9 @@ export async function PutReserveSpot({ area, amount }) {
 export async function PostFulfillReservation(reservationId) {
   const response = await fetch(`${url}/fullfill-reservation`, {
     method: "POST",
-    headers: headersList,
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({ id: reservationId }),
   });
 
