@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -8,17 +7,17 @@ export default function TicketSelection({ updateTicketData }) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors: formErrors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const handleFormSubmit = (data) => {
     updateTicketData(data);
     console.log("data from component", data);
   };
 
-  console.log("error?", errors);
+  console.log("error?", formErrors);
 
-  const tickets = [
+  const ticketOptions = [
     {
       title: "Foo Fest Billet",
       price: "Fra 799 DKK",
@@ -39,7 +38,7 @@ export default function TicketSelection({ updateTicketData }) {
         "Neque porro quisquam est",
       ],
       image: "/images/VIPbillet.jpg",
-      type: "VIP", 
+      type: "VIP",
     },
   ];
 
@@ -49,7 +48,7 @@ export default function TicketSelection({ updateTicketData }) {
         Tickets
       </h1>
       <div className="lg:w-3/4 space-y-12 ">
-        {tickets.map((ticket, index) => (
+        {ticketOptions.map((ticket, index) => (
           <div
             key={index}
             className="flex flex-col md:flex-row overflow-hidden lg:h-96 lg:relative border-y lg:border-none"
@@ -81,15 +80,14 @@ export default function TicketSelection({ updateTicketData }) {
 
               {/* Counter */}
               <div className="mt-6 flex items-center space-x-4 lg:absolute top-4 right-4">
-              <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="number"
-            placeholder="0"
-            {...register(ticket.type, { min: 0 })}
-            className="input input-bordered"
-          />
-          
-        </form>
+                <form onSubmit={handleSubmit(handleFormSubmit)}>
+                  <input
+                    type="number"
+                    placeholder="0"
+                    {...register(ticket.type, { min: 0 })}
+                    className="input input-bordered"
+                  />
+                </form>
               </div>
             </div>
           </div>
@@ -97,8 +95,11 @@ export default function TicketSelection({ updateTicketData }) {
       </div>
 
       <div className="flex justify-center my-10">
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="submit" className="btn  rounded-full border-black text-black hover:text-white py-2 px-6 w-44 flex items-center gap-4 justify-center bg-gold" />
+        <form onSubmit={handleSubmit(handleFormSubmit)}>
+          <input
+            type="submit"
+            className="btn  rounded-full border-black text-black hover:text-white py-2 px-6 w-44 flex items-center gap-4 justify-center bg-gold"
+          />
         </form>
       </div>
     </div>
