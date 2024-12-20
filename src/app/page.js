@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Button from "./components/Button";
 import Hero from "./components/Hero";
 import Accordion from "./components/Accordion";
