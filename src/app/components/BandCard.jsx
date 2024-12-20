@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 
-const ArtistCard = ({ band, schedule }) => {
+const ArtistCard = ({ band }) => {
   const { name, logo, slug } = band;
   const { ref, inView } = useInView({
     triggerOnce: true,

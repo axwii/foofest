@@ -1,6 +1,5 @@
 import { getSingleBands } from "@/app/lib/api";
 import BandSingleView from "@/app/components/BandSingleView";
-import HeroSingle from "@/app/components/HeroSingle";
 
 async function Slug({ params }) {
   const { slug } = await params;
