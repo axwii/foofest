@@ -66,5 +66,4 @@ export default function TicketForm({ type, index, onFormChange }) {
       <hr className="mt-12 mb-[-20px]"/>
     </div>
   );
-  
 }

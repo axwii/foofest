@@ -40,7 +40,9 @@ export default function CampingOptions({ updateTicketData, ticketData }) {
       <h1 className="text-8xl font-bold text-heading mb-6 font-GermaniaOneRegular">
         Camping
       </h1>
-      <p className="mb-8 text-xl font-Gambetta font-thin italic">CAMPING RESERVATION 99 DKK</p>
+      <p className="mb-8 text-xl font-Gambetta font-thin italic">
+        CAMPING RESERVATION 99 DKK
+      </p>
       <form
         className="grid md:grid-cols-2 gap-y-7 md:w-[520px]"
         onSubmit={handleSubmit(onSubmit)}
@@ -76,11 +78,12 @@ export default function CampingOptions({ updateTicketData, ticketData }) {
             </span>
           </label>
         ))}
-
       </form>
-      <form onSubmit={handleSubmit(onSubmit)}>        <button onClick={handleReserve} disabled={!area} className="btn mt-7">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <button onClick={handleReserve} disabled={!area} className="btn mt-7">
           Reserve Spot
-        </button></form>
+        </button>
+      </form>
     </div>
   );
 }

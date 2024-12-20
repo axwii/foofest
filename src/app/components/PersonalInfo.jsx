@@ -30,14 +30,24 @@ export default function PersonalInfo({ updateTicketData, ticketData }) {
   return (
     <div className="ml-8">
       <div className="ml-10">
-      <h2 className="text-8xl font-GermaniaOneRegular text-heading">Personal info</h2>
-      <h4 className="text-xl font-Gambetta font-thin italic" >Fill out you information here</h4>
+        <h2 className="text-8xl font-GermaniaOneRegular text-heading">
+          Personal info
+        </h2>
+        <h4 className="text-xl font-Gambetta font-thin italic">
+          Fill out you information here
+        </h4>
       </div>
       {renderTicketForms(ticketData.regular, "Regular")}
       {renderTicketForms(ticketData.vip, "VIP")}
       <div className="flex justify-center mt-4 lg:ml-[-300px]">
-          <button type="submit" className="btn  rounded-full border-black text-black hover:text-white py-2 px-6 w-44 flex items-center gap-4 justify-center bg-gold mt-4" onClick={handleSubmit}> Submit</button>
-        </div>
+        <button
+          type="submit"
+          className="btn rounded-full border-black text-black hover:text-white py-2 px-6 w-44 flex items-center gap-4 justify-center bg-gold mt-4"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
